@@ -1,0 +1,97 @@
+1 . git Congif:
+
+Git komutlarını Yazan kişinin kim olduğunu Git' e söyler.
+(Git'in çalışma şeklini değiştirmek için de kullanılır. Örneğin renkleri açmak, düzenleyici belirlemek veya kısayollar oluşturmak için de kullanılır. )
+
+git config --global user.name "xxxx"
+git config --global user.email "xxxxxx@yyyy.com"
+
+
+2 . git init:
+
+klasörün içinde .git adında gizli bir dosya oluşturulur.  Bu, Hidden Items (Gizli Öğeler) içinde görünür.
+
+-->.git Nedir?
+   Bu klasör Git’in beynidir!
+   .git klasörü, Git'in projenle ilgili tüm bilgileri sakladığı yerdir.
+   Tüm geçmiş kayıtlar burada tutulur (hangi dosyaları değiştirdin, ne zaman değiştirdin vs.).
+   Git, bu klasör sayesinde projenin bir Git deposu olduğunu anlar.
+   Eğer .git klasörünü silersen, Git o klasörü takip etmeyi bırakır. 
+
+3 . git status:
+
+Git’e "Durum nedir?" diye sormaktır.Hangi dosyalar ekli? Hangi dosyalar değişti? Eksik bir şey var mı?  
+
+Untracked files:						 |
+  (use "git add <file>..." to include in what will be committed) |-----|>❌ "Bu dosya yeni ama daha eklemedin!"
+    ders_notları.txt						 |
+
+git add ders_notları.txt |-----|> (dosyayı ekleyelim)
+git status |-----|> (tekrar soralım)
+
+
+Changes to be committed:		      |
+  (use "git reset HEAD <file>..." to unstage) |-----|>✅ "Tamam, bu dosyayı ekledin. Artık kaydedebilirsin!"
+    new file:   ders_notları.txt	      |
+
+4 . git commit:
+
+Bu komut, Git’e "Tamam, bu yaptığım değişikliği kaydet!" demektir.Ve bunu unutmamak için yanına küçük bir not eklersin. git commit, o anki değişiklikleri kaydedip geçmişe not düşmektir!
+Fotoğraf çekmek gibi düşün → Yaptığın değişiklik kaybolmaz.
+"-m" ile bir not yazarsın → "Bu değişiklik neden yapıldı?"
+git commit yapmazsan, değişikliklerin kaybolmaz ama Git onları hatırlamaz!
+oyunda ilerlemeyi kaydetmeye e benzetilebilir
+
+5 . git log:
+
+Git de senin yaptığın değişiklikleri bir günlük gibi kaydeder.
+Ve git log komutunu yazarsan, bu geçmişi görebilirsin!
+
+commit 3a5b7c2e9d…
+Author: Elif Özge ORAL <elif@example.com>
+Date:   Sat Mar 2 14:32:10 2024 +0300
+
+    Ana sayfayı güncelledim
+
+commit 1f4e6b8c7a…
+Author: Elif Özge ORAL <elif@example.com>
+Date:   Fri Mar 1 10:15:05 2024 +0300
+
+    İlk dosyamı ekledim
+
+ Her commit’in bir kimliği (ID'si) var.
+ Kim yaptı, ne zaman yaptı yazıyor.
+ Hangi değişiklikleri yaptığın açıklanıyor.
+ git log = Projenin tarihçesi
+
+
+6. git version değisirme:
+
+Git de senin kodlarını kaydeder ve her commit bir "kayıt noktası" gibidir.
+Eğer bir hata yaparsan, önceki bir versiyona geri dönebilirsin!
+
+Bunu yapmak için şu komutu kullanırsın:
+
+git checkout <commit_id>
+
+Ya da en son commit’e geri dönmek istersen:
+
+git checkout HEAD~1
+ 
+7. git diff:
+Eğer bir dosyada değişiklik yaptıysan ama henüz commit etmediysen, git diff ile neyin değiştiğini görebilirsin!
+Commit yapmadan önce değişiklikleri kontrol etmek için kullanılır!
+
+8. git degisiklikleri geri alma restore  
+ 
+git restore komutu, yaptığın değişiklikleri geri almak için kullanılır.
+Örneğin, bir dosyayı yanlışlıkla değiştirdiysen, eski haline döndürebilirsin!
+Bu komut sanki "Geri Al (Undo)" tuşuna basmak gibidir!
+
+ git restore = Yanlışlıkla sildiğin şeyi geri almak
+ git restore dosya_adi = Bir dosyayı eski haline döndürmek
+ git restore . = Tüm değişiklikleri geri almak
+
+
+ 
+    
