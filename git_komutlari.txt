@@ -65,7 +65,7 @@ Date:   Fri Mar 1 10:15:05 2024 +0300
  git log = Projenin tarihçesi
 
 
-6. git version değisirme:
+6 . git version değisirme:
 
 Git de senin kodlarını kaydeder ve her commit bir "kayıt noktası" gibidir.
 Eğer bir hata yaparsan, önceki bir versiyona geri dönebilirsin!
@@ -78,11 +78,11 @@ Ya da en son commit’e geri dönmek istersen:
 
 git checkout HEAD~1
  
-7. git diff:
+7 . git diff:
 Eğer bir dosyada değişiklik yaptıysan ama henüz commit etmediysen, git diff ile neyin değiştiğini görebilirsin!
 Commit yapmadan önce değişiklikleri kontrol etmek için kullanılır!
 
-8. git degisiklikleri geri alma restore  
+8 . git degisiklikleri geri alma restore  
  
 git restore komutu, yaptığın değişiklikleri geri almak için kullanılır.
 Örneğin, bir dosyayı yanlışlıkla değiştirdiysen, eski haline döndürebilirsin!
@@ -91,6 +91,64 @@ Bu komut sanki "Geri Al (Undo)" tuşuna basmak gibidir!
  git restore = Yanlışlıkla sildiğin şeyi geri almak
  git restore dosya_adi = Bir dosyayı eski haline döndürmek
  git restore . = Tüm değişiklikleri geri almak
+
+9 . git remove (rm):
+
+Git’te de proje içinde artık istemediğin bir dosyayı silmek için git rm kullanılır.
+
+git rm dosya.txt = Dosyayı hem Git’ten hem bilgisayardan siler
+git rm --cached dosya.txt = Dosya bilgisayarda kalır ama Git takip etmeyi bırakır
+git rm -r klasor/ = Bir klasörü ve içindeki tüm dosyaları siler 
+
+10 . git move (mv):
+
+Git’te de dosyaları taşımak veya yeniden adlandırmak için git mv kullanılır!
+
+a) Dosyayı sadece yeniden adlandırmak:
+git mv eski_ad.txt yeni_ad.txt
+
+b )Dosyayı başka bir klasöre taşımak:
+git mv belge.txt belgeler/
+
+c)Başlangıçta dosya burada:
+/proje/kodlar/deneme.py
+ Ama sonra:
+ Adını "final.py" yapmak istiyorsun.
+ Ve "kodlar" klasöründen "son_hali" klasörüne taşımak istiyorsun.
+
+
+Yapman gereken:
+git mv proje/kodlar/deneme.py proje/son_hali/final.py
+
+ Sonuç: Dosyan yeni ad ve yeni konumuyla taşındı!
+
+commit yapmayı da unutma:)
+
+11 . git alias:
+
+Uzun İsim Yerine Kısa Takma İsim Kullanmak
+
+git config --global alias.st status
+
+Artık git st yazınca, Git bunu git status olarak anlar!
+
+ 1. git log yerine git lg kullanmak:
+git config --global alias.lg log --oneline --graph --all
+
+ 2. git commit -m yerine git cm kullanmak:
+git config --global alias.cm "commit -m"
+
+ 3. git checkout yerine git co kullanmak:
+git config --global alias.co checkout
+
+Alias eklemek için: git config --global alias.kisaisim gercekkomut
+
+12 . git push:
+
+git push = Bilgisayarındaki değişiklikleri GitHub gibi uzak sunucuya gönderir.
+Önce commit yapmalısın: git commit -m "Mesaj"
+Sonra git push origin main diyerek GitHub’a yükleyebilirsin.
+
 
 
  
