@@ -100,6 +100,8 @@ git rm dosya.txt = Dosyayı hem Git’ten hem bilgisayardan siler
 git rm --cached dosya.txt = Dosya bilgisayarda kalır ama Git takip etmeyi bırakır
 git rm -r klasor/ = Bir klasörü ve içindeki tüm dosyaları siler 
 
+commit yapmayı da unutma:)
+
 10 . git move (mv):
 
 Git’te de dosyaları taşımak veya yeniden adlandırmak için git mv kullanılır!
